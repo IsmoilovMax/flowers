@@ -13,23 +13,23 @@ export default function Footer() {
     <div className="footer">
       <div className="heading">
         <h2>
-          Faraz<sup>™</sup>
+          Flowers<sup>™</sup>
         </h2>
       </div>
       <div className="content">
         <div className="services">
           <h4>Services</h4>
           <p>
-            <a href="#">App development</a>
+            <a href="#">Same-Day Delivery</a>
           </p>
           <p>
-            <a href="#">Web development</a>
+            <a href="#">Custom Flower Arrangements</a>
           </p>
           <p>
-            <a href="#">DevOps</a>
+            <a href="#">Event Floral Services</a>
           </p>
           <p>
-            <a href="#">Web designing</a>
+            <a href="#">Subscription Service</a>
           </p>
         </div>
         <div className="social-media">
@@ -87,12 +87,12 @@ export default function Footer() {
           </p>
           <h4 className="mail">Email</h4>
           <p>
-            <a href="#">farazc60@gmail.com</a>
+            <a href="#">flowers@gmail.com</a>
           </p>
         </div>
       </div>
       <footer>
-        <hr />© 2022 codewithFaraz.
+        <hr />© 2024 Flowers<sup>™</sup>
       </footer>
     </div>
   );

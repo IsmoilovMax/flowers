@@ -17,7 +17,6 @@ import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
 import { Logout } from "@mui/icons-material";
 
-
 interface HomeNavbarProps {
   cartItems: CartItem[];
   onAdd: (item: CartItem) => void;
@@ -93,14 +92,14 @@ export default function HomeNavbar(props: HomeNavbarProps) {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/About" className="nav-link">
+              <NavLink to="/about" className="nav-link">
                 About
               </NavLink>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <NavLink to="/contact" className="nav-link">
                 Contact
-              </a>
+              </NavLink>
             </li>
             <Basket
               cartItems={cartItems}
@@ -219,7 +218,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             <div className="hero-image-wrapper">
               <img
                 src="/img/images/images.png.png"
-                alt="Coffee"
+                alt="flowers"
                 className="hero-image"
               />
             </div>

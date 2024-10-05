@@ -49,7 +49,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
       <header>
         <nav className="navbar">
           <NavLink to="/" className="nav-logo">
-            <h2 className="logo-text">🌹 Flowers</h2>
+            <h2 className="logo-text">🌹 Blossom</h2>
           </NavLink>
 
           <ul className="nav-menu">
@@ -74,7 +74,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             ) : null}
             {authMember ? (
               <li className="nav-item">
-                <NavLink to="#menu" className="nav-link">
+                <NavLink to="/menu" className="nav-link">
                   My page
                 </NavLink>
               </li>
@@ -91,7 +91,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <a href="/contact" className="nav-link">
                 Contact
               </a>
             </li>

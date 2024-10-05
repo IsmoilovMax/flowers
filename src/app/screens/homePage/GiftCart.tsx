@@ -7,21 +7,21 @@ import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 import { CartItem } from "../../../lib/types/search";
 
-interface SaleCardProps {
-  sale: Product;
+interface GiftProps {
+  gift: Product;
   onAdd: (item: CartItem) => void;
 }
 
-const SaleCard: React.FC<SaleCardProps> = ({ sale, onAdd }) => {
-  const imagePath = `${serverApi}/${sale.productImages[0]}`;
+const GiftCart: React.FC<GiftProps> = ({ gift, onAdd }) => {
+  const imagePath = `${serverApi}/${gift.productImages[0]}`;
 
   const handleAddToCart = () => {
     const item: CartItem = {
-      _id: sale._id,
+      _id: gift._id,
       quantity: 1,
-      name: sale.productName,
-      price: sale.productPrice,
-      image: sale.productImages[0],
+      name: gift.productName,
+      price: gift.productPrice,
+      image: gift.productImages[0],
     };
     onAdd(item); // onAdd funksiyasini chaqirish
   };
@@ -44,29 +44,26 @@ const SaleCard: React.FC<SaleCardProps> = ({ sale, onAdd }) => {
           height: "150px",
         }}
       >
-        <div className={"status"}>
-        <img src="/img/icons/electricity.svg" alt="" />
-          <span>Sale</span>
-        </div>
-        <div className={"price"}>${sale.productPrice}</div>
+        <div className={"price"}>${gift.productPrice}</div>
       </Box>
       <Box className={"info"} sx={{ padding: "10px" }}>
         <strong style={{ textAlign: "center" }} className={"title"}>
-          {sale.productName}
+          {gift.productName}
         </strong>
         <Button
           onClick={handleAddToCart}
           sx={{
-            background: "rgb(198 0 255 / 66%)",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            background: "#FFD700",
             color: "#fff",
             width: "210px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             height: "38px",
             borderRadius: "10%",
-            marginTop: "20px",
-            fontFamily: "Museo Sans Cyrl",
+            marginLeft: "9px",
+            marginTop: "5px",
+            fontFamily: "Roboto, Helvetica, Arial, sans-serif",
             "&:hover": {
-              backgroundColor: "rgba(149, 109, 132, 1)", // No hover change
+              backgroundColor: "#eb6753", // No hover change
             },
           }}
         >
@@ -78,11 +75,11 @@ const SaleCard: React.FC<SaleCardProps> = ({ sale, onAdd }) => {
             <IconButton color={"default"}>
               <RemoveRedEyeIcon />
             </IconButton>
-            <Typography className="view-cnt">{sale.productViews}</Typography>
+            <Typography className="view-cnt">{gift.productViews}</Typography>
             <IconButton color={"default"}>
               <FavoriteIcon style={{ color: "red" }} />
             </IconButton>
-            <Typography className="view-cnt">2</Typography>
+            <Typography className="view-cnt">3</Typography>
           </div>
         </div>
       </Box>
@@ -90,4 +87,4 @@ const SaleCard: React.FC<SaleCardProps> = ({ sale, onAdd }) => {
   );
 };
 
-export default SaleCard;
+export default GiftCart;

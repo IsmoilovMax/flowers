@@ -15,8 +15,9 @@ import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
 import "../../../css/home.css";
 import Sale from "./SaleMenu";
-import Advertisement from "./BlogMenu";
 import { CartItem } from "../../../lib/types/search";
+import Gift from "./GiftMenu";
+import Blog from "./BlogMenu";
 
 /** Redux Slice & Selector*/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -39,7 +40,7 @@ export default function HomePage(props: ProductsPage) {
     product
       .getProducts({
         page: 1,
-        limit: 8,
+        limit: 20,
         order: "createdAt",
         productCollection: ProductCollection.Sale,
       })
@@ -79,10 +80,10 @@ export default function HomePage(props: ProductsPage) {
     <div className={"homepage"}>
       <Statistics />
       <Sale onAdd = {onAdd}/>
-      <FlowerMenu onAdd = {onAdd} />
-      <Events />
+      <FlowerMenu  onAdd={onAdd}/>
+      <Gift  onAdd={onAdd}/>
       <ActiveUsers />
-      <Advertisement />
+      <Blog />
     </div>
   );
 }

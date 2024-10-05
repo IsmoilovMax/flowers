@@ -13,92 +13,44 @@ import { retrieveGift } from "./selector";
 import { useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
 import { Product } from "../../../lib/types/product";
+import GiftCart from "./GiftCart";
+import { CartItem } from "../../../lib/types/search";
 
 /** Redux slice & Selector */
- 
-const retrieveGiftMenu = createSelector(
-  retrieveGift,
-  (gift) => ({ gift })
-);
 
+const retrieveGiftMenu = createSelector(retrieveGift, (gift) => ({ gift }));
 
+interface GiftsProps {
+  onAdd: (item: CartItem) => void;
+}
 
-export default function Gift() {
-  const { gift} = useSelector(retrieveGiftMenu);
+export default function Gift(props: GiftsProps) {
+  const { gift } = useSelector(retrieveGiftMenu);
+  const { onAdd } = props;
 
   console.log("gift:", gift);
-    
+
   return (
-    <div className="popular-dishes-frame">
-      <Container>
-        <Stack className="popular-section">
-          <Box className="category-title">Gifts</Box>
-          <Stack className="cards-frame">
-            {gift.length !== 0 ? (
-               gift.map((product: Product) => {
-                const imagePath = `${serverApi}/${product.productImages[0]}`;
-                return (
-                  <CssVarsProvider key={product._id}>
-                    <Card className={"card"}>
-                      <CardCover>
-                        <img src={imagePath} alt="" />
-                      </CardCover>
-                      <CardCover className={"card-cover"} />
-                      <CardContent sx={{ justifyContent: "flex-end" }}>
-                        <Stack
-                          flexDirection={"row"}
-                          justifyContent={"space-between"}
-                        >
-                          <Typography
-                            level="h2"
-                            fontSize="lg"
-                            textColor="#fff"
-                            mb={1}
-                          >
-                             {product.productName}
-                          </Typography>
-                          <Typography
-                            sx={{
-                              fontWeight: "md",
-                              color: "neutral.300",
-                              alignItems: "center",
-                              display: "flex",
-                            }}
-                          >
-                             {product.productViews}
-                            <VisibilityIcon
-                              sx={{ fontSize: 25, marginLeft: "5px" }}
-                            />
-                          </Typography>
-                        </Stack>
-                      </CardContent>
-                      <CardOverflow
-                        sx={{
-                          display: "flex",
-                          gap: 1.5,
-                          py: 1.5,
-                          px: "var(--Card-padding)",
-                          borderTop: "1px solid",
-                          height: "60px",
-                        }}
-                      >
-                        <Typography
-                          startDecorator={<DescriptionOutlinedIcon />}
-                          textColor="neutral.300"
-                        >
-                          {product.productDesc}
-                        </Typography>
-                      </CardOverflow>
-                    </Card>
-                  </CssVarsProvider>
-                );
-              })
-            ) : (
-              <Box className="no-data">New products are not available!</Box>
-            )}
-          </Stack>
+    <Stack className="flowers">
+      <Stack className="container">
+        <Stack className="info-box">
+          <Box className="left">
+            <span>Gifts</span>
+            <p style={{ textAlign: "center" }}>New arrival</p>
+          </Box>
         </Stack>
-      </Container>
-    </div>
+        <Stack className="card-box">
+          {gift.length === 0 ? (
+            <Box>No sales available</Box>
+          ) : (
+            gift.map((gift) => (
+              <Box className="popular-property-slide" key={gift._id}>
+                <GiftCart gift={gift} onAdd={onAdd} />
+              </Box>
+            ))
+          )}
+        </Stack>
+      </Stack>
+    </Stack>
   );
 }

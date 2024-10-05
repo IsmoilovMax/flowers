@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .homepage {
   position: relative;
   width: 100%;
@@ -82,14 +88,14 @@
 }
 
 .popular-properties .container .info-box .left span {
-  color: #181a20;
   text-align: center;
-  font-size: 34px;
+  font-family: "Roboto Serif";
+  font-size: 36px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  letter-spacing: -0.646px;
-  text-transform: capitalize;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
 }
 
 .popular-properties .container .info-box .left span.white {
@@ -197,7 +203,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
 }
 
 .popular-properties
@@ -237,7 +242,7 @@
 .popular-properties .container .card-box .popular-card-box .card-img .status {
   position: absolute;
   padding: 6px 34px;
-  left: 20px;
+  left: 10px;
   top: 20px;
   display: flex;
   align-items: center;
@@ -252,8 +257,8 @@
   .card-img
   .status
   img {
-  width: 1px;
-  height: 1px;
+  width: 100%;
+  height: 100%;
 }
 
 .popular-properties
@@ -482,12 +487,7 @@
 }
 
 .homepage .popular-dishes-frame .cards-frame .card .card-cover {
-  background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0) 200px
-    ),
-    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
+  background: "";
 }
 
 /** ADVERTISEMENT **/
@@ -499,11 +499,7 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  overflow-x: hiden;
-  background: #e7e7e7;
-}
+
 
 .homepage .category-title {
   margin-bottom: 60px;
@@ -519,7 +515,7 @@ body {
 
 .homepage .container {
   width: 100%;
-  height: 800px;
+  height: 100%;
   padding-right: 1.5rem, 0.75rem;
   padding-left: 1.5rem, 0.75rem;
   margin: 2rem auto;
@@ -692,7 +688,7 @@ body {
   background: #ffffff;
   display: flex;
   width: 100%;
-  height: 650px;
+  height: 520px;
 }
 
 .homepage .active-users-frame .main {
@@ -703,14 +699,18 @@ body {
 }
 
 .homepage .active-users-frame .category-title {
+  text-align: center;
+  font-family: "Roboto Serif";
+  font-size: 36px;
   font-style: normal;
-  font-weight: 750;
-  font-size: 35px;
-  line-height: 40px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
 }
 
 .homepage .cards-frame {
-  width: 100%;
+  width: 1300px;
   margin-top: 20px;
   flex-direction: row;
 }
@@ -841,4 +841,357 @@ body {
 
 .leatestProducts div.hover-line:after {
   transform-origin: 0% 50%;
+}
+
+/* Flowers Cart**/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.flowers {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+.flowers .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.flowers .container .info-box {
+  width: 1300px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 75px;
+  justify-content: center;
+}
+
+.flowers .container .info-box .left {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.flowers .container .info-box .left span {
+  text-align: center;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
+}
+
+.flowers .container .info-box .left span.white {
+  color: #ffffff;
+}
+
+.flowers .container .info-box .left p {
+  color: #181a20;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.flowers .container .info-box .left p.white {
+  color: #ffffff;
+}
+
+.flowers .container .info-box .right .pagination-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flowers .container .card-box {
+  margin-top: 34px;
+  width: 100%;
+  height: auto;
+  /* display: flex; */
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.flowers .container .card-box .popular-property-swiper .popular-property-slide {
+  width: 250px;
+  height: auto;
+  display: flex;
+  margin: 10px 0 10px 10px;
+  gap: 60px;
+}
+
+.flowers .container .card-box .popular-property-slide .popular-card-box {
+  position: relative;
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.flowers .container .card-box .popular-property-slide .popular-card-box:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .card-img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  border-radius: 12px 12px 0px 0px;
+  cursor: pointer;
+}
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .card-img
+  .status {
+  position: absolute;
+  padding: 6px 34px;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  background: #eb6753;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .card-img
+  .status
+  img {
+  width: 1px;
+  height: 1px;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .card-img
+  .status
+  span {
+  margin-left: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .card-img
+  .price {
+  position: absolute;
+  padding: 8px 12px;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 6px;
+  background: #fff;
+  color: #181a20;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.flowers .container .card-box .popular-property-slide .popular-card-box .info {
+  padding: 20px 22px 17px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 0px 0px 12px 12px;
+  border: 1px solid rgba(196, 196, 196, 0.71);
+  border-top: none;
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .title {
+  overflow: hidden;
+  color: #181a20;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .desc {
+  margin-top: 5px;
+  overflow: hidden;
+  color: #717171;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .options {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .options
+  div {
+  display: flex;
+  flex-direction: row;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .options
+  div
+  img {
+  margin-right: 5px;
+  width: 17px;
+  height: 17px;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .options
+  div
+  span {
+  color: #181a20;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .bott {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .bott
+  p {
+  color: #181a20;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .bott
+  button {
+  margin-left: 7px;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .bott
+  .view-like-box {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+}
+
+.flowers
+  .container
+  .card-box
+  .popular-property-slide
+  .popular-card-box
+  .info
+  .bott
+  .view-like-box
+  .view-cnt {
+  color: #717171;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-overflow: ellipsis;
 }

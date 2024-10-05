@@ -8,7 +8,7 @@ export default function Statistics() {
       <Container>
         <Stack className="info">
           <Stack className="static-box">
-            <Box className="static-num">12</Box>
+            <Box className="static-num">101+</Box>
             <Box className="static-text">Flowers Available</Box>
           </Stack>
 

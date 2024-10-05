@@ -24,8 +24,8 @@ export default function Sale(props: ProductsProps) {
       <Stack className="container">
         <Stack className="info-box">
           <Box className="left">
-            <span>Sale Menu</span>
-            <p>Sale is based on views</p>
+            <span>Sale</span>
+            <p style={{textAlign: "center"}}>New arrival</p>
           </Box>
         </Stack>
         <Stack className="card-box">

@@ -17,6 +17,8 @@ import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { Messages } from "../lib/config";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
+import About from "./screens/homePage/About";
+import Contact from "./screens/homePage/Contact";
 
 
 
@@ -91,6 +93,12 @@ function App() {
           </Route>
           <Route path="/help">
             <HelpPage />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/">
             <HomePage  onAdd = {onAdd} />
