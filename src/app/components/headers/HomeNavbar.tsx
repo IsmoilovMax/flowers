@@ -55,7 +55,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
       <header>
         <nav className="navbar">
           <NavLink to="/" className="nav-logo">
-            <h2 className="logo-text">🌹 Flowers</h2>
+            <h2 className="logo-text">🌹  Blossom</h2>
           </NavLink>
 
           <ul className="nav-menu">
@@ -80,7 +80,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             ) : null}
             {authMember ? (
               <li className="nav-item">
-                <NavLink to="#menu" className="nav-link">
+                <NavLink to="/member-page" className="nav-link">
                   My page
                 </NavLink>
               </li>
@@ -96,11 +96,11 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 About
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink to="/contact" className="nav-link">
                 Contact
               </NavLink>
-            </li>
+            </li> */}
             <Basket
               cartItems={cartItems}
               onRemove={onRemove}

@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Blog() {
   return (
-    <Stack sx={{height: "800px"}}>
+    <Stack>
       <Box className="category-title">Blog Menu</Box>
-      <div className="container">
+      <div style={{height: "650px"}} className="container">
         <div className="row align-items-stretch retro-layout">
           <div className="col-md-4">
             <a href="#" className="h-entry mb-30 v-height gradient">

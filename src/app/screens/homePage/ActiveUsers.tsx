@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Stack } from "@mui/material";
 import { CssVarsProvider } from "@mui/joy";
 import Card from "@mui/joy/Card";
-import CardOverflow from "@mui/joy/CardOverflow";
 import AspectRatio from "@mui/joy/AspectRatio";
 import { createSelector } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
@@ -19,7 +18,6 @@ import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 
-/** Redux Slice & Selector */
 const topUsersRetriever = createSelector(retrieveTopUsers, (topUsers) => ({
   topUsers,
 }));
@@ -27,11 +25,32 @@ const topUsersRetriever = createSelector(retrieveTopUsers, (topUsers) => ({
 export default function ActiveUsers() {
   const { topUsers } = useSelector(topUsersRetriever);
   return (
-    <div className="active-users-frame">
-      <Container>
+    <div className="active-users-frame" style={{ marginBottom: "90px" }}>
+      <Container sx={{ py: 4 }}>
         <Stack className="main">
-          <Box className="category-title">Active Users</Box>
-          <Stack className="cards-frame">
+          <Typography
+            component="div"
+            sx={{
+              mb: 3,
+              textAlign: "center",
+              fontFamily: "Roboto Serif",
+              fontSize: "36px",
+              fontWeight: 600,
+              lineHeight: "normal",
+              letterSpacing: "1.44px",
+              color: "#000",
+              marginBottom: "60px", // Adjusted to use marginBottom correctly
+            }}
+          >
+            Active Users
+          </Typography>
+
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="space-between"
+            className="cards-frame"
+          >
             <CssVarsProvider>
               {topUsers.length !== 0 ? (
                 topUsers.map((member: Member) => {
@@ -40,21 +59,28 @@ export default function ActiveUsers() {
                     <Card
                       variant="outlined"
                       sx={{
-                        width: 280,
-                        height: "100%",
-                        // to make the card resizable
-                        overflow: "auto",
-                        resize: "horizontal",
+                        width: 300,
+                        borderRadius: "12px",
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                        transition: "transform 0.2s",
+                        "&:hover": {
+                          transform: "scale(1.05)",
+                        },
                       }}
+                      key={member._id} // Make sure to use a unique key
                     >
                       <Box
                         sx={{
                           display: "flex",
                           justifyContent: "space-between",
                           alignItems: "center",
+                          p: 2,
                         }}
                       >
-                        <Avatar src={imagePath} sx={{ "--Avatar-size": "88px" }} />
+                        <Avatar
+                          src={imagePath}
+                          sx={{ width: 88, height: 88 }}
+                        />
                         <AvatarGroup size="sm" sx={{ "--Avatar-size": "28px" }}>
                           <Avatar src="/img/avatar/2.jpg" />
                           <Avatar src="/img/avatar/3.jpg" />
@@ -62,16 +88,24 @@ export default function ActiveUsers() {
                           <Avatar>+1K</Avatar>
                         </AvatarGroup>
                       </Box>
-                      <CardContent>
-                        <Typography level="title-lg">
+                      <CardContent sx={{ padding: "16px" }}>
+                        <Typography
+                          level="title-lg"
+                          sx={{ textAlign: "center", fontWeight: "600" }}
+                        >
                           {member.memberNick}
                         </Typography>
                       </CardContent>
-                      <CardActions buttonFlex="0 1 120px">
+                      <CardActions
+                        sx={{ justifyContent: "space-around", pb: 2 }}
+                      >
                         <IconButton
                           variant="solid"
                           color="neutral"
-                          sx={{ mr: "auto",backgroundColor: "red"}}
+                          sx={{
+                            backgroundColor: "red",
+                            "&:hover": { backgroundColor: "#f0f0f0" },
+                          }}
                         >
                           <FavoriteBorder />
                         </IconButton>
@@ -86,7 +120,12 @@ export default function ActiveUsers() {
                   );
                 })
               ) : (
-                <Box className="no-data">No Active Users!</Box>
+                <Box
+                  className="no-data"
+                  sx={{ textAlign: "center", width: "100%", mt: 2 }}
+                >
+                  No Active Users!
+                </Box>
               )}
             </CssVarsProvider>
           </Stack>

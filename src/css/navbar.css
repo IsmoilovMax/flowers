@@ -94,7 +94,7 @@ header .navbar {
 }
 .navbar .nav-menu {
   padding: 0;
-  gap: 10px;
+  gap: 30px;
   display: flex;
 }
 .navbar .nav-menu .nav-link {

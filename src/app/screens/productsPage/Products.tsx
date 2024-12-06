@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
+import Typography from "@mui/joy/Typography";
 
 /** Redux Slice & Selector*/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -327,25 +328,32 @@ export default function Products(props: ProductsProps) {
         </Stack>
       </Container>
 
-      <div className={"brands-logo"}>
-        <Container className={"family-brands"}>
-          <Box className={"category-title"}>Our Family Brands</Box>
-          <Stack className={"brand-list"}>
-            <Box className={"review-box"}>
-              <img src={"/img/gurme.webp"} alt={""} />
+      <div className="brands-logo" style={{ padding: "40px 0", backgroundColor: "#f8f9fa" }}>
+      <Container className="family-brands">
+        <Typography  component="div" className="category-title" sx={{ mb: 4, textAlign: "center", fontWeight: "bold", color: "#333" }}>
+          Our Delivery Photos
+        </Typography>
+        <Stack direction="row" spacing={2} justifyContent="center" className="brand-list">
+          {[21, 22, 23, 24].map((num) => (
+            <Box
+              key={num}
+              className="review-box"
+              sx={{
+                borderRadius: "8px",
+                overflow: "hidden",
+                boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            >
+              <img src={`/img/our/${num}.jpg`} alt="" style={{ width: "100%", height: "auto" }} />
             </Box>
-            <Box className={"review-box"}>
-              <img src={"/img/sweets.webp"} alt={""} />
-            </Box>
-            <Box className={"review-box"}>
-              <img src={"/img/seafood.webp"} alt={""} />
-            </Box>
-            <Box className={"review-box"}>
-              <img src={"/img/doner.webp"} alt={""} />
-            </Box>
-          </Stack>
-        </Container>
-      </div>
+          ))}
+        </Stack>
+      </Container>
+    </div>
 
       <div className={"address"}>
         <Container>
@@ -353,7 +361,7 @@ export default function Products(props: ProductsProps) {
             <Box className={"title"}>Our address</Box>
             <iframe
               style={{ marginTop: "60px" }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.363734762081!2d69.2267250514616!3d41.322703307863044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b9a0a33281d%3A0x9c5015eab678e435!2z0KDQsNC50YXQvtC9!5e0!3m2!1sko!2skr!4v1655461169573!5m2!1sko!2skr"
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25867.098915951767!2d128.68632810247993!3d35.86402299180927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bba427bf179%3A0x1fc02da732b9072f!2sGeumhogangbyeon-ro%2C%20Dong-gu%2C%20Daegu!5e0!3m2!1suz!2skr!4v1695537640704!5m2!1suz!2skr"
               width="1320"
               height="500"
               referrerPolicy="no-referrer-when-downgrade"
