@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "start:prod": "serve -s build -p 3003",
+    "start:prod": "serve -s build -l 3003",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
