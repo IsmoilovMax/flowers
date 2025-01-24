@@ -4,7 +4,7 @@
       "name": "flower-frontend",
       "cwd": "./",
       "script": "serve",
-      "args": "-s build -p 3003",
+      "args": "-s build -l 3003",
       "watch": false,
       "env": {
         "PORT": "3003",
