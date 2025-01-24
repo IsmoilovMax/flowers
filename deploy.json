@@ -4,10 +4,9 @@
       "name": "flower-frontend",
       "cwd": "./",
       "script": "serve",
-      "args": "-s build -l 3003",
+      "args": "-s build -p 3003",
       "watch": false,
       "env": {
-        "PORT": "3003",
         "NODE_ENV": "production"
       }
     }
