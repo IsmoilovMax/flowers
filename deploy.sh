@@ -9,7 +9,8 @@ git pull origin master
 
 npm i global add serve --legacy-peer-deps
 npm run build
-pm2 start npm --name "FLOWERS-REACT" -- start:prod
+pm2 start serve --name "flower-frontend" -- -s build -l 3003
+
 
 
 
