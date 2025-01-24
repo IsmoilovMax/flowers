@@ -1,14 +1,15 @@
 {
-    "apps": [
-      {
-        "name": "startup-next",
-        "script": "./node_modules/next/dist/bin/next",
-        "args": "start",
-        "env": {
-          "PORT": "3003",
-          "NODE_ENV": "production"
-        }
+  "apps": [
+    {
+      "name": "flower-frontend",
+      "cwd": "./",
+      "script": "serve",
+      "args": "-s build -l 3003",
+      "watch": false,
+      "env": {
+        "PORT": "3003",
+        "NODE_ENV": "production"
       }
-    ]
-  }
-  
+    }
+  ]
+}
