@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# #Production
-# git reset --hard
-# git checkout master
-# git pull origin master 
+#Production
+git reset --hard
+git checkout master
+git pull origin master 
 
 
 
